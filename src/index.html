@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <meta name="Keywords" content="网站管理系统" />
+    <meta name="Description" content="网站管理系统" />
+    <title>网站后台管理系统</title>
+    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.css" />
+</head>
+
+<body>
+
+    <header>
+        <div class="container-fluid-12">
+            <div class="head-logo clearfix">
+                <div class="float-left">
+                    <a href="javascript:;">
+                        <img class="logo" src="/imgs/vue.png" alt="logo image" />
+                        <h4>网站管理系统</h4>
+                    </a>
+                </div>
+                <div class="float-right">
+                    <button type="button" class="btn btn-primary active btn-sm">退出登录</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+
+        <div class="container-fluid-12 admin">
+            <div class="clearfix">
+
+                <!--左边-->
+                <div class="admin-left">
+                    <h4 class="ttl-1"> 菜单管理</h4>
+                    <div class="box-big">
+                        <!-- accordion 大框 -->
+                        <div class="v-collapse-parent accordion">
+
+                            <!--accordion 每一项 -->
+                            <div class="v-collapse-item">
+
+                                <div class="v-collapse-btn">
+                                    <a href="#v-collapse-a1" data-toggle="v-collapse"> <i class="bi bi-house"></i>系统管理</a>
+                                </div>
+
+                                <!--v-collapse-->
+                                <div class="v-collapse v-collapse-content in" id="v-collapse-a1" data-parent=".accordion">
+                                    <!--二级菜单-->
+                                    <ul class="nemu-2">
+                                        <li class="active">
+                                            <a href="系统管理-产品档案报表.html"> 档案报表</a>
+                                        </li>
+                                        <li>
+                                            <a href="系统管理-公告管理.html">公告管理</a>
+                                        </li>
+                                        <li>
+                                            <a href="系统管理-客户档案.html">客户档案</a>
+                                        </li>
+                                        <li>
+                                            <a href="系统管理-库存列表.html">库存列表</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!--accordion 每一项 -->
+                            <div class="v-collapse-item">
+
+                                <div class="v-collapse-btn">
+                                    <a href="#v-collapse-a2" data-toggle="v-collapse"> <span class="glyphicon glyphicon-list-alt"></span>入库管理</a>
+                                </div>
+
+                                <!--v-collapse-->
+                                <div class="v-collapse v-collapse-content" id="v-collapse-a2" data-parent=".accordion">
+                                    <!--二级菜单-->
+                                    <ul class="nemu-2">
+                                        <li class="">
+                                            <a href="入库管理.html">入库管理</a>
+                                        </li>
+
+                                        <li class="">
+                                            <a href="入库管理-入库单作废.html">入库单作废</a>
+                                        </li>
+                                        <li>
+                                            <a href="入库管理-录入入库单.html">录入入库单</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!--accordion 每一项 -->
+                            <div class="v-collapse-item">
+
+                                <div class="v-collapse-btn">
+                                    <a href="#v-collapse-a3" data-toggle="v-collapse"><span class="glyphicon glyphicon-book"></span> 出库管理</a>
+                                </div>
+
+                                <!--v-collapse-->
+                                <div class="v-collapse v-collapse-content" id="v-collapse-a3" data-parent=".accordion">
+                                    <!--二级菜单-->
+                                    <ul class="nemu-2">
+
+                                        <li>
+                                            <a href="出库管理.html">出库管理</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="出库管理-出库单作废.html">出库单作废</a>
+                                        </li>
+                                        <li>
+                                            <a href="出库管理-录入出库单.html">录入出库单</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!--accordion 每一项 -->
+                            <div class="v-collapse-item">
+
+                                <div class="v-collapse-btn">
+                                    <a href="#v-collapse-a4" data-toggle="v-collapse"><span class="glyphicon glyphicon-file"></span> 报表中心</a>
+                                </div>
+
+                                <!--v-collapse-->
+                                <div class="v-collapse v-collapse-content" id="v-collapse-a4" data-parent=".accordion">
+                                    <!--二级菜单-->
+                                    <ul class="nemu-2">
+                                        <li>
+                                            <a href="报表管理-搬运统计.html">搬运统计</a>
+                                        </li>
+                                        <li>
+                                            <a href="报表管理-产品档案报表.html">产品档案报表</a>
+                                        </li>
+                                        <li>
+                                            <a href="报表管理-出库统计.html">出库统计</a>
+                                        </li>
+                                        <li>
+                                            <a href="报表管理-单数统计.html">单数统计</a>
+                                        </li>
+                                        <li>
+                                            <a href="报表管理-对账单查询.html">对账单查询</a>
+                                        </li>
+                                        <li>
+                                            <a href="报表管理-客户档案.html">客户档案</a>
+                                        </li>
+                                        <li>
+                                            <a href="报表管理-客户帐总表.html">客户帐总表</a>
+                                        </li>
+                                        <li>
+                                            <a href="报表管理-客户对账单.html">客户对账单</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--右边-->
+                <div class="admin-right clearfix">
+
+                    <div class="wrap-ttl ">
+                        <ul class="ttl-1 clearfix">
+                            <!--<li class="active"><span class="txt">产品档案报表 </span><span class="close">&times;</span></li>-->
+                        </ul>
+
+                        <!--左右键移动btn-->
+                        <span class="warp-left-btn "> <i class="bi bi-chevron-left"></i></span>
+                        <span class="warp-right-btn "><i class="bi bi-chevron-right"></i></span>
+                    </div>
+                    <!-- 
+						<div class="admin-right-refresh  btn-refresh"  title="刷新子页面">
+							<span class="glyphicon glyphicon-refresh  " data-placement="left" title="刷新子页面" data-toggle="tooltip" ></span>
+						</div> -->
+
+                    <!--iframe-->
+                    <div class="iframe-big ">
+                        <!--<iframe id="iframe" class="iframe-box active" src="系统管理-产品档案报表.html"></iframe>-->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <!-- <footer>
+			<div class="footer">
+				<div class="container-fluid-12">
+					<div class="cont">
+						<span>www.w3c.com</span>
+					</div>
+				</div>
+			</div>
+		</footer> -->
+    <script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/v-collapse.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/all.js" data-umd="index" defer type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

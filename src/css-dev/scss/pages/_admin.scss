@@ -1,0 +1,308 @@
+/**admin**/
+
+//head-logo
+.head-logo {
+    padding: 10px;
+    line-height: 40px;
+    background: $primary;
+
+    .logo {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        vertical-align: middle;
+    }
+    a {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    h4 {
+        display: inline-block;
+        padding: 0;
+        margin: 0 0 0 10px;
+        font-size: 18px;
+        font-weight: 200;
+
+        color: $white;
+    }
+
+    // right
+    .pull-right {
+        position: relative;
+        margin-right: 3%;
+    }
+    .head-img {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+
+    .iconfont {
+        position: relative;
+        font-size: 32px;
+        color: $white;
+        &:hover {
+            cursor: pointer;
+        }
+
+        & + .iconfont {
+            margin-left: 20px;
+        }
+
+        &.icon-mima {
+            font-size: 36px;
+        }
+    }
+}
+
+// 左边标题
+.admin-left {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 11%;
+    max-width: 260px;
+    min-width: 220px;
+    background: #fff;
+    .ttl-1 {
+        border-bottom: 1px solid $br;
+        //border-right: 1px solid $br;
+        border-top: none;
+        margin: 0;
+        height: 44px;
+        line-height: 44px;
+        font-size: 18px;
+        color: $primary;
+        text-align: center;
+    }
+    .box-big {
+        width: 100%;
+        overflow: auto;
+        overflow-x: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        .v-collapse-content {
+            padding: 0;
+        }
+        // 二级菜单
+        .nemu-2 {
+            padding: 10px 0;
+            li {
+                padding: 0;
+                > a {
+                    display: block;
+                    width: 100%;
+                    margin: 0;
+                    padding: 10px 25px;
+                    color: $text-ash;
+                    font-size: 14px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    transition: all 0.4s;
+                    text-align: left;
+                    &:hover {
+                        background: #f2f2f2;
+                    }
+                }
+                &.active > a {
+                    background: lighten($primary, 46%);
+                    color: darken($primary, 5%);
+                    > span {
+                        color: darken($primary, 5%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 右边内容
+.admin-right {
+    position: relative;
+    overflow: hidden;
+    //ttl wrap
+    .wrap-ttl {
+        position: relative;
+        overflow: hidden;
+        border-left: 1px solid #f2f2f2;
+        background: #fff;
+        box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+        // box-shadow:  0 2px 4px rgba(0, 0, 0, 0.075) inset,-4px -2px 4px rgba(0, 0, 0, 0.075) inset;
+    }
+    // 左右键移动btn
+    .warp-left-btn,
+    .warp-right-btn {
+        position: absolute;
+        z-index: 99;
+        top: 1px;
+        display: none;
+        padding: 10px 3px;
+        color: #fff;
+        background: #333;
+        background: rgba(#333, 0.5);
+        cursor: pointer;
+        outline: none;
+
+        &:hover {
+            background: rgba(#333, 0.9);
+            color: #fff;
+        }
+    }
+    .warp-left-btn {
+        left: 1px;
+    }
+
+    .warp-right-btn {
+        right: 1px;
+    }
+
+    ul.ttl-1 {
+        position: relative;
+        z-index: 1;
+        height: 43px;
+        left: 0;
+        float: left;
+        white-space: nowrap;
+        //  border-bottom: 1px solid $br;
+        li {
+            position: relative;
+            display: inline-block;
+            float: none;
+            height: 43px;
+            line-height: 43px;
+            padding: 0 30px 0 20px;
+            border-right: 1px solid #f2f2f2;
+            font-size: 14px;
+            vertical-align: middle;
+            &:hover {
+                cursor: pointer;
+            }
+            .close {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%) scale(1.4);
+                color: #777;
+                font-weight: 200;
+                font-size: 1rem;
+
+                &:hover {
+                    color: red;
+                }
+            }
+            &.active {
+                color: $primary;
+                font-weight: 600;
+            }
+        }
+    }
+
+    //  btn-refresh
+    .admin-right-refresh {
+        position: absolute;
+        height: 43px;
+        width: 50px;
+        right: 0px;
+        top: 0;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -4px 0 10px rgba(0, 0, 0, 0.075);
+
+        &:hover {
+            cursor: pointer;
+            span {
+                color: $primary;
+                transform: rotate(360deg) scale(1.4);
+            }
+        }
+
+        span {
+            position: relative;
+            display: inline-block;
+            color: #333;
+            transition: 0.4s ease;
+        }
+    }
+    // iframe
+    .iframe-big {
+        width: 100%;
+        overflow: hidden;
+    }
+    // iframe-boox
+    .iframe-box {
+        position: relative;
+        display: none;
+        border: none;
+        width: 100% !important;
+        box-sizing: border-box;
+        overflow: scroll;
+        &.active {
+            display: block;
+            animation: showIframe 0.5s linear both;
+        }
+    }
+    @keyframes showIframe {
+        0% {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+}
+
+/**footer**/
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: $white;
+    background: $primary;
+
+    .cont {
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+.v-collapse {
+    display: none;
+}
+
+.v-collapse-parent {
+    margin: 10px 7px;
+}
+
+.v-collapse-item {
+    border: 1px solid $primary;
+}
+
+.v-collapse-item + .v-collapse-item {
+    margin-top: 5px;
+}
+
+.v-collapse-btn a {
+    display: block;
+    line-height: 40px;
+    padding: 0px 15px;
+    font-size: 16px;
+    color: #fff;
+    background: $primary;
+    text-decoration: none;
+    > span {
+        margin-right: 5px;
+        font-size: 14px;
+    }
+}
+
+.v-collapse-content {
+    padding: 15px 15px;
+}
