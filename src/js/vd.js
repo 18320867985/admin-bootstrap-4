@@ -1,5 +1,3 @@
-
-
 /* 	
    作者：hqs
    时间：2017-10-08
@@ -9,16 +7,16 @@
 
 window._vd = window.vd;
 
-(function () {
+(function() {
     "use strict";
 
-    var Validate = function (formName) {
+    var Validate = function(formName) {
 
-        this.submitText="正在提交中...";
+        this.submitText = "正在提交中...";
 
         this.formName = typeof formName === "undefined" ? ".form" : formName;
 
-        this.init = function () {
+        this.init = function() {
 
             this.addErrorStyle(false, true);
             this.checkObj(this.formName);
@@ -26,15 +24,15 @@ window._vd = window.vd;
 
         };
 
-        this.baseRemoteUrl="",
+        this.baseRemoteUrl = "",
 
-        this.disabled = function (obj) {
+            this.disabled = function(obj) {
 
-            $(obj).attr("disabled", "disabled");
+                $(obj).attr("disabled", "disabled");
 
-        };
+            };
 
-        this.enabled = function (obj) {
+        this.enabled = function(obj) {
 
             $(obj).removeAttr("disabled");
         };
@@ -43,7 +41,7 @@ window._vd = window.vd;
 
         this.vdbtnText = "";
 
-        this.compareEmit = function (pName, compareName, value) {
+        this.compareEmit = function(pName, compareName, value) {
             var el = $("" + pName + " [name=" + compareName + "]");
             if ($.trim(el.val()) === "") {
                 return;
@@ -64,7 +62,7 @@ window._vd = window.vd;
 
         };
 
-        this.checkObj = function (formName) {
+        this.checkObj = function(formName) {
             if (typeof formName === "undefined") {
                 formName = ".form";
             }
@@ -72,7 +70,7 @@ window._vd = window.vd;
             this.arrs = [];
             var $this = this;
 
-            $("" + formName + " .vd-item").each(function () {
+            $("" + formName + " .vd-item").each(function() {
                 var name = $(this).attr("name");
                 var v = $(this).val();
                 var req_msg = $(this).attr("vd-req-msg");
@@ -157,7 +155,7 @@ window._vd = window.vd;
 
                         obj.val = [];
 
-                        $(this).find("[type=checkbox]:checked").each(function () {
+                        $(this).find("[type=checkbox]:checked").each(function() {
                             var _ck_gp_true = this.getAttribute("vd-ck-true") || "";
                             var v = _ck_gp_true || this.value || "";
                             obj.val.push(v);
@@ -192,7 +190,7 @@ window._vd = window.vd;
                     } else {
 
                         obj.val = "";
-                        $(this).find("[type=radio]:checked").each(function () {
+                        $(this).find("[type=radio]:checked").each(function() {
                             var _ck_gp_true = this.getAttribute("vd-ck-true") || "";
                             var v = _ck_gp_true || this.value || "";
                             obj.val = v;
@@ -207,19 +205,19 @@ window._vd = window.vd;
 
         };
 
-        this.addVidation = function () {
+        this.addVidation = function() {
 
             for (var i = 0; i < this.arrs.length; i++) {
                 var _obj = this.arrs[i];
                 var el = _obj.el; // document.forms[_obj.pName][_obj.elName];
                 var $this = this;
                 if (window.addEventListener) {
-                    $(el).on("input", _obj, function (event) {
+                    $(el).on("input", _obj, function(event) {
                         $this.checkElement(event.data, event.target, true, true);
                         $this.addVdBtnStyle();
                     });
                 } else {
-                    $(el).on("keyup", _obj, function (event) {
+                    $(el).on("keyup", _obj, function(event) {
                         $this.checkElement(event.data, event.target, true, true);
                         $this.addVdBtnStyle();
                     });
@@ -228,7 +226,7 @@ window._vd = window.vd;
 
                 var remote = el.getAttribute("vd-remote");
                 if (remote === null) {
-                    $(el).on("change", _obj, function (event) {
+                    $(el).on("change", _obj, function(event) {
                         $this.checkElement(event.data, event.target, true, true);
                         $this.addVdBtnStyle();
                     });
@@ -245,8 +243,8 @@ window._vd = window.vd;
 
         };
 
-        this.checkElement = function (_obj2, el, isRemote, isRadio) {
-            var self=this;
+        this.checkElement = function(_obj2, el, isRemote, isRadio) {
+            var self = this;
             // req
             var _req = el.getAttribute("vd-req");
             var _req_msg = el.getAttribute("vd-req-msg");
@@ -439,36 +437,36 @@ window._vd = window.vd;
                 }
 
                 var $remote = this;
-               
+
                 if (isRemote) {
                     $(el).trigger("onremotebefore", [el]);
-                    var remoteObjectString=$(el).attr("vd-remote-obj");
-                    var remoteMethod=($(el).attr("vd-remote-method")||"get").toLowerCase();
-                    var remoteName=($(el).attr("vd-remote-name")||"").toLowerCase();
-                    var remoteRes=($(el).attr("vd-remote-res")||"true");  // 为真或假结果判断 默认为真
-                     
-                    var props={};
-                    props[el.name]=v;
+                    var remoteObjectString = $(el).attr("vd-remote-obj");
+                    var remoteMethod = ($(el).attr("vd-remote-method") || "get").toLowerCase();
+                    var remoteName = ($(el).attr("vd-remote-name") || "").toLowerCase();
+                    var remoteRes = ($(el).attr("vd-remote-res") || "true"); // 为真或假结果判断 默认为真
+
+                    var props = {};
+                    props[el.name] = v;
                     $.extend(props, self.getObjectByString(remoteName));
-                    if( $.ajaxSetup().contentType==="application/json" && remoteMethod!=="get"){
-                        props=JSON.stringify(props);
+                    if ($.ajaxSetup().contentType === "application/json" && remoteMethod !== "get") {
+                        props = JSON.stringify(props);
                     }
-               //  console.log(   self.getObj("name"))
+                    //  console.log(   self.getObj("name"))
                     $.ajax({
-                        url: self.baseRemoteUrl+_remote + "?rand=" + Math.random(),
+                        url: self.baseRemoteUrl + _remote + "?rand=" + Math.random(),
                         type: remoteMethod,
-                        data:props,
+                        data: props,
                         timeout: 10000,
-                        success: function (data) {
+                        success: function(data) {
                             // 获取校验指定的属性
-                           if(remoteObjectString){
-                              data= self.getObjectPropByString(data,remoteObjectString);
-                           }
+                            if (remoteObjectString) {
+                                data = self.getObjectPropByString(data, remoteObjectString);
+                            }
                             data = !!data;
-                            $(el).trigger("onremoteafter", [el,data]);
+                            $(el).trigger("onremoteafter", [el, data]);
 
                             // 真
-                            if(remoteRes==="true"){
+                            if (remoteRes === "true") {
                                 if (!data) {
                                     $remote.remoteFunError(_obj2, el, _remote_msg);
                                     $remote.addVdBtnStyle(el);
@@ -478,10 +476,10 @@ window._vd = window.vd;
                                     $remote.addVdBtnStyle(el);
 
                                 }
-                             }
+                            }
 
-                              // 假
-                            if(remoteRes==="false"){
+                            // 假
+                            if (remoteRes === "false") {
                                 if (data) {
                                     $remote.remoteFunError(_obj2, el, _remote_msg);
                                     $remote.addVdBtnStyle(el);
@@ -491,12 +489,12 @@ window._vd = window.vd;
                                     $remote.addVdBtnStyle(el);
 
                                 }
-                             }
+                            }
 
 
 
                         },
-                        error: function (data) {
+                        error: function(data) {
                             $remote.remoteFunError(_obj2, el, _remote_msg);
                             return;
                         }
@@ -586,7 +584,7 @@ window._vd = window.vd;
 
                         _obj2.val = [];
                         v = [];
-                        _ck_parent.find("[type=checkbox]:checked").each(function () {
+                        _ck_parent.find("[type=checkbox]:checked").each(function() {
                             var _ck_gp_true = this.getAttribute("vd-ck-true") || "";
                             var v = _ck_gp_true || this.value || "";
                             _obj2.val.push(v);
@@ -632,7 +630,7 @@ window._vd = window.vd;
                 } else {
 
                     _obj2.val = "";
-                    _rd_parent.find("[type=radio]:checked").each(function () {
+                    _rd_parent.find("[type=radio]:checked").each(function() {
                         var _ck_gp_true = this.getAttribute("vd-ck-true") || "";
                         var v = _ck_gp_true || this.value || "";
                         _obj2.val = v;
@@ -653,7 +651,7 @@ window._vd = window.vd;
 
         this.isSubmit = true;
 
-        this.isSuccess = function (successFun, errorFun) {
+        this.isSuccess = function(successFun, errorFun) {
 
             // 添加错误样式
             this.addErrorStyle(false, false);
@@ -696,7 +694,7 @@ window._vd = window.vd;
             return true;
         };
 
-        this.getNewObjs = function () {
+        this.getNewObjs = function() {
 
             // 是否全部验证成功
             var newObj = {};
@@ -712,7 +710,7 @@ window._vd = window.vd;
 
         };
 
-        this.getObj = function (name) {
+        this.getObj = function(name) {
 
             // 是否全部验证成功
             var obj = {}
@@ -730,7 +728,7 @@ window._vd = window.vd;
 
         };
 
-        this.addErrorStyle = function (isRemote, isRadio) {
+        this.addErrorStyle = function(isRemote, isRadio) {
 
             for (var i = 0; i < this.arrs.length; i++) {
                 var obj = this.arrs[i];
@@ -740,7 +738,7 @@ window._vd = window.vd;
             }
         };
 
-        this.remoteFunOk = function (_obj2, el) {
+        this.remoteFunOk = function(_obj2, el) {
             _obj2.errorMsg = "";
             _obj2.bl = true;
             _obj2.val = $(el).val();
@@ -757,7 +755,7 @@ window._vd = window.vd;
 
         };
 
-        this.remoteFunError = function (_obj2, el, _remote_msg) {
+        this.remoteFunError = function(_obj2, el, _remote_msg) {
             _obj2.errorMsg = _remote_msg;
             _obj2.bl = false;
             _obj2.val = $(el).val();
@@ -776,7 +774,7 @@ window._vd = window.vd;
         };
 
 
-        this.vdIsOk = function () {
+        this.vdIsOk = function() {
 
             // 是否全部验证成功
             var baseBl = true;
@@ -792,7 +790,7 @@ window._vd = window.vd;
             return baseBl;
         };
 
-        this.addVdBtnStyle = function () {
+        this.addVdBtnStyle = function() {
 
             // 提交按钮
             var p = $(this.formName);
@@ -811,7 +809,7 @@ window._vd = window.vd;
 
         };
 
-        this.check = function () {
+        this.check = function() {
             var p = $(el).closest(".vd-box");
             if (arguments.length >= 1) {
                 var el = arguments[0] || "";
@@ -856,15 +854,15 @@ window._vd = window.vd;
 
         };
 
-        this.validate = function () {
+        this.validate = function() {
             this.isSuccess();
         };
 
-        this.reset = function () {
+        this.reset = function() {
 
             this.isSubmit = true;
             var p = $(this.formName);
-            $(".vd-item", p).each(function (item) {
+            $(".vd-item", p).each(function(item) {
 
                 $(this).val("");
 
@@ -875,11 +873,11 @@ window._vd = window.vd;
 
 
 
-            $("[type=checkbox]", p).each(function () {
+            $("[type=checkbox]", p).each(function() {
                 $(this)[0].checked = false;
 
             });
-            $("[type=radio]", p).each(function () {
+            $("[type=radio]", p).each(function() {
                 $(this)[0].checked = false;
 
             });
@@ -894,13 +892,13 @@ window._vd = window.vd;
             }
         };
 
-        this.disabledItem=function(){
+        this.disabledItem = function() {
             this.disabled($(this.formName).find("input")); //禁用
             this.disabled($(this.formName).find("select")); //禁用
             this.disabled($(this.formName).find("textarea")); //禁用
         };
 
-        this._valStyle = function (p) {
+        this._valStyle = function(p) {
 
             $(".vd-box", p).removeClass("vd-error ");
             $(".vd-btn", p).removeClass("vd-error ");
@@ -918,38 +916,40 @@ window._vd = window.vd;
             this.enabled($(this.formName).find("textarea")); //激活
         };
 
-        this.getObjectPropByString=function(obj,str){
-            str=str||"";
-           var arrs= str.split(".");
-           var tempObj=null,propName="";
+        this.getObjectPropByString = function(obj, str) {
+            str = str || "";
+            var arrs = str.split(".");
+            var tempObj = null,
+                propName = "";
 
-           for(var i=0,len=arrs.length;i<len;i++){
-                propName=arrs[i];
-                if(typeof obj[propName]==="undefined"){ break;}
-                tempObj=obj[propName];
-           }
+            for (var i = 0, len = arrs.length; i < len; i++) {
+                propName = arrs[i];
+                if (typeof obj[propName] === "undefined") { break; }
+                tempObj = obj[propName];
+            }
 
-           return tempObj;
+            return tempObj;
 
         }; // 根据对字符串获取对象的属性值
 
-        this.getObjectByString=function(str){
-            str=str||"";
-            var arrs= str.split(",");
-            var o={},propName="";
+        this.getObjectByString = function(str) {
+            str = str || "";
+            var arrs = str.split(",");
+            var o = {},
+                propName = "";
 
-           for(var i=0,len=arrs.length;i<len;i++){
-                var names= arrs[i].split("=")||[];
-                var objName=names.length>=2?names[1]:names[0];
-                propName=names[0];
-                 var _obj=this.getObj(propName);
-                if(_obj){
-                    o[objName]=_obj.val;
+            for (var i = 0, len = arrs.length; i < len; i++) {
+                var names = arrs[i].split("=") || [];
+                var objName = names.length >= 2 ? names[1] : names[0];
+                propName = names[0];
+                var _obj = this.getObj(propName);
+                if (_obj) {
+                    o[objName] = _obj.val;
                 }
-              
-           }
 
-           return o;
+            }
+
+            return o;
 
         }; // 根据对字符串转换成对象
 
@@ -957,7 +957,7 @@ window._vd = window.vd;
     };
 
     window.vd = {
-        create: function (formName) {
+        create: function(formName) {
             return new Validate(formName);
         }
     };

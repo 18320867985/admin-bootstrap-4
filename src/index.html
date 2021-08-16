@@ -8,6 +8,7 @@
     <meta name="Keywords" content="网站管理系统" />
     <meta name="Description" content="网站管理系统" />
     <title>网站后台管理系统</title>
+
     <link rel="stylesheet" type="text/css" href="css/icons.css" />
     <link rel="stylesheet" type="text/css" href="css/all.css" />
 </head>
@@ -24,7 +25,7 @@
                     </a>
                 </div>
                 <div class="float-right">
-                    <button type="button" class="btn btn-primary active btn-sm">退出登录</button>
+                    <button type="button" class="btn btn-primary active btn-sm  logout-btn"> 退出登录 </button>
                 </div>
             </div>
         </div>
@@ -37,7 +38,7 @@
 
                 <!--左边-->
                 <div class="admin-left">
-                    <h4 class="ttl-1"> 菜单管理</h4>
+                    <h4 class="ttl-1">菜单管理 </h4>
                     <div class="box-big">
                         <!-- accordion 大框 -->
                         <div class="v-collapse-parent accordion">
@@ -46,7 +47,7 @@
                             <div class="v-collapse-item">
 
                                 <div class="v-collapse-btn">
-                                    <a href="#v-collapse-a1" data-toggle="v-collapse"> <i class="bi bi-house"></i>系统管理</a>
+                                    <a href="#v-collapse-a1" data-toggle="v-collapse"> <i class="bi bi-gear-fill"></i>系统管理</a>
                                 </div>
 
                                 <!--v-collapse-->
@@ -54,7 +55,7 @@
                                     <!--二级菜单-->
                                     <ul class="nemu-2">
                                         <li class="active">
-                                            <a href="系统管理-产品档案报表.html"> 档案报表</a>
+                                            <a href="系统管理-产品档案报表.html"><i class="bi bi-card-checklist"></i> 档案报表</a>
                                         </li>
                                         <li>
                                             <a href="系统管理-公告管理.html">公告管理</a>
@@ -100,7 +101,8 @@
                             <div class="v-collapse-item">
 
                                 <div class="v-collapse-btn">
-                                    <a href="#v-collapse-a3" data-toggle="v-collapse"><span class="glyphicon glyphicon-book"></span> 出库管理</a>
+                                    <a href="#v-collapse-a3" data-toggle="v-collapse"><span
+                                                class="glyphicon glyphicon-book"></span> 出库管理</a>
                                 </div>
 
                                 <!--v-collapse-->
@@ -127,7 +129,8 @@
                             <div class="v-collapse-item">
 
                                 <div class="v-collapse-btn">
-                                    <a href="#v-collapse-a4" data-toggle="v-collapse"><span class="glyphicon glyphicon-file"></span> 报表中心</a>
+                                    <a href="#v-collapse-a4" data-toggle="v-collapse"><span
+                                                class="glyphicon glyphicon-file"></span> 报表中心</a>
                                 </div>
 
                                 <!--v-collapse-->
@@ -189,8 +192,8 @@
                     </div>
 
                 </div>
-
             </div>
+
         </div>
 
     </section>
@@ -203,7 +206,29 @@
 				</div>
 			</div>
 		</footer> -->
+
+        <!--退出登录 确认框-->
+        <div class="modal fade " id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">提示</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  你是否确认退出登录？
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-primary logout" >确认</button>
+                </div>
+              </div>
+            </div> 
+          </div>
     <script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/v-collapse.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/all.js" data-umd="index" defer type="text/javascript" charset="utf-8"></script>
 </body>

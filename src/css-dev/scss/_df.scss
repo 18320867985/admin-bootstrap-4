@@ -5,6 +5,7 @@ $line: #f2f2f2;
 $line-blod: #ddd;
 
 /* a link*/
+
 a,
 a:link,
 a:visited,
@@ -33,7 +34,9 @@ ul {
     clip: rect(0 0 0 0);
 }
 
+
 /* 输入框focus焦点*/
+
 input[type="text"]:focus,
 input[type="password"]:focus,
 select:focus,
@@ -59,6 +62,7 @@ textarea:focus {
 .tb-row {
     display: table-row;
 }
+
 // table-cell
 .tb-cell {
     display: table-cell;
@@ -78,6 +82,7 @@ textarea:focus {
 .tb-sep {
     border-collapse: separate;
 }
+
 
 /*定位position*/
 
@@ -111,32 +116,44 @@ textarea:focus {
     visibility: hidden;
 }
 
+
 /* placeholder */
+
+
 /*webkit*/
+
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
     color: $text-placeholder !important;
 }
 
+
 /*IE10+*/
+
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
     color: $text-placeholder !important;
 }
 
+
 /*Firefox4-18*/
+
 input:-moz-placeholder,
 textarea:-moz-placeholder {
     color: $text-placeholder !important;
 }
 
+
 /*Firefox19+*/
+
 input::-moz-placeholder,
 textarea::-moz-placeholder {
     color: $text-placeholder !important;
 }
 
+
 /* placeholder 兼容ie8  ie9 */
+
 .ie8-pwd {
     position: absolute;
     z-index: 1;
@@ -145,7 +162,9 @@ textarea::-moz-placeholder {
     text-indent: 10px;
 }
 
+
 /*ellipsis*/
+
 .elp-no {
     white-space: normal;
     word-break: break-all;
@@ -204,7 +223,6 @@ textarea::-moz-placeholder {
 }
 
 // 宽度的百分比
-
 .w-0-5 {
     width: 5%;
     float: left;

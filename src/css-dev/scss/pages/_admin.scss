@@ -5,7 +5,6 @@
     padding: 10px;
     line-height: 40px;
     background: $primary;
-
     .logo {
         width: 30px;
         height: 30px;
@@ -22,10 +21,8 @@
         margin: 0 0 0 10px;
         font-size: 18px;
         font-weight: 200;
-
         color: $white;
     }
-
     // right
     .pull-right {
         position: relative;
@@ -39,7 +36,6 @@
         border-radius: 50%;
         vertical-align: middle;
     }
-
     .iconfont {
         position: relative;
         font-size: 32px;
@@ -47,11 +43,9 @@
         &:hover {
             cursor: pointer;
         }
-
         & + .iconfont {
             margin-left: 20px;
         }
-
         &.icon-mima {
             font-size: 36px;
         }
@@ -106,6 +100,10 @@
                     &:hover {
                         background: #f2f2f2;
                     }
+                    > i {
+                        margin-right: 5px;
+                        font-size: 1em;
+                    }
                 }
                 &.active > a {
                     background: lighten($primary, 46%);
@@ -145,7 +143,6 @@
         background: rgba(#333, 0.5);
         cursor: pointer;
         outline: none;
-
         &:hover {
             background: rgba(#333, 0.9);
             color: #fff;
@@ -154,11 +151,9 @@
     .warp-left-btn {
         left: 1px;
     }
-
     .warp-right-btn {
         right: 1px;
     }
-
     ul.ttl-1 {
         position: relative;
         z-index: 1;
@@ -188,7 +183,6 @@
                 color: #777;
                 font-weight: 200;
                 font-size: 1rem;
-
                 &:hover {
                     color: red;
                 }
@@ -199,7 +193,6 @@
             }
         }
     }
-
     //  btn-refresh
     .admin-right-refresh {
         position: absolute;
@@ -212,7 +205,6 @@
         justify-content: center;
         align-items: center;
         box-shadow: -4px 0 10px rgba(0, 0, 0, 0.075);
-
         &:hover {
             cursor: pointer;
             span {
@@ -220,7 +212,6 @@
                 transform: rotate(360deg) scale(1.4);
             }
         }
-
         span {
             position: relative;
             display: inline-block;
@@ -259,6 +250,7 @@
 }
 
 /**footer**/
+
 .footer {
     position: fixed;
     left: 0;
@@ -266,7 +258,6 @@
     width: 100%;
     color: $white;
     background: $primary;
-
     .cont {
         padding: 10px;
         text-align: center;
@@ -297,12 +288,12 @@
     color: #fff;
     background: $primary;
     text-decoration: none;
-    > span {
+    > i {
         margin-right: 5px;
-        font-size: 14px;
+        font-size: 1em;
     }
 }
 
 .v-collapse-content {
-    padding: 15px 15px;
+    padding: 15px 15px; 
 }

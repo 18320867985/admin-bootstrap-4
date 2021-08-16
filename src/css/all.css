@@ -8702,6 +8702,9 @@ textarea::-moz-placeholder {
           text-align: left; }
           .admin-left .box-big .nemu-2 li > a:hover {
             background: #f2f2f2; }
+          .admin-left .box-big .nemu-2 li > a > i {
+            margin-right: 5px;
+            font-size: 1em; }
         .admin-left .box-big .nemu-2 li.active > a {
           background: #ebf4ff;
           color: #006fe6; }
@@ -8869,9 +8872,9 @@ textarea::-moz-placeholder {
   color: #fff;
   background: #007bff;
   text-decoration: none; }
-  .v-collapse-btn a > span {
+  .v-collapse-btn a > i {
     margin-right: 5px;
-    font-size: 14px; }
+    font-size: 1em; }
 
 .v-collapse-content {
   padding: 15px 15px; }
